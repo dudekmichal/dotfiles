@@ -1,0 +1,63 @@
+! --- ~/.Xresources ---
+
+xterm*faceName: Terminus
+xterm*faceSize: 8
+xterm*xftAntialias: true
+XTerm*metaSendsEscape: true
+
+xterm*utf8: 1
+xterm*locale: true
+xterm*scrollKey: true
+xterm*savelines: 512
+xterm*ScrollBar: false
+xterm*loginshell: true
+xterm*visualBell: false
+xterm*marginBell: false
+xterm*fastScroll: true
+xterm*jumpScroll: true
+xterm*multiScroll: true
+
+xterm*autoWrap: true
+xterm*dynamicColors: true
+xterm*scrollTtyOutput: false
+xterm*alwaysHighlight: true
+xterm*highlightSelection: true
+
+xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
+! special
+xterm*.foreground:   #c5c8c6
+xterm*.background:   #0e0e0e
+xterm*.cursorColor:  #c5c8c6
+
+! black
+xterm*.color0:       #101010
+xterm*.color8:       #525252
+
+! red
+xterm*.color1:       #ff0000
+xterm*.color9:       #ff0000
+
+! green
+xterm*.color2:       #ffffff
+xterm*.color10:      #ffffff
+
+! yellow
+xterm*.color3:       #2f2f2f
+xterm*.color11:      #2f2f2f
+
+! blue
+xterm*.color4:       #686868
+xterm*.color12:      #686868
+
+! magenta
+xterm*.color5:       #747474
+xterm*.color13:      #747474
+
+! cyan
+xterm*.color6:       #868686
+xterm*.color14:      #868686
+
+! white
+xterm*.color7:       #ffffff
+xterm*.color15:      #ffffff

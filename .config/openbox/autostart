@@ -1,0 +1,8 @@
+@mpd /home/qeni/.mpd/mpd.conf &
+@xrdb -merge /home/qeni/.Xresources &
+@redshift -l 51.107:17.04 -t 5500:3500 -b 1.0:0.9 &
+@amixer sset Master 60%
+@amixer sset Master unmute
+@setxkbmap pl
+@xset b off
+@xset b 0 0 0
