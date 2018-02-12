@@ -1,3 +1,4 @@
+#OPTIONS=gender:female,name:Lyana,role:Valkyrie,race:Dwarf,align:lawful
 #OPTIONS=gender:male
 OPTIONS=catname:Mr Karabasov
 OPTIONS=horsename:Plotka
@@ -30,8 +31,15 @@ OPTIONS=!prayconfirm
 OPTIONS=showscore
 OPTIONS=disclose:+iavgco
 OPTIONS=pushweapon
-OPTIONS=scores:10t o
 OPTIONS=sortloot:none
+OPTIONS=lootabc
+OPTIONS=boulder:0
+OPTIONS=mention_walls
+OPTIONS=number_pad:0
+OPTIONS=runmode:walk
+OPTIONS=safe_pet
+OPTIONS=scores:30t o
+OPTIONS=!showrace
 
 # emergencies
 MSGTYPE=stop "The (couatl.*eel|kraken) swings itself around you!"
@@ -92,14 +100,14 @@ MSGTYPE=stop " is about to die."
 
 # noise
 MSGTYPE=hide "^With great effort you move the boulder"
-MSGTYPE=hide "^Your armor is rather cumbersome..."               #  monk wearing body armor
+MSGTYPE=hide "^Your armor is rather cumbersome..."
 MSGTYPE=hide "^You displaced "
 
 OPTIONS=color
 OPTIONS=menucolors
 MENUCOLOR="rotten"=orange&bold
-MENUCOLOR="blessed"=cyan&bold
-MENUCOLOR="cursed"=red&bold
+MENUCOLOR="blessed"=cyan&inverse
+MENUCOLOR="cursed"=red&inverse
 MENUCOLOR="uncursed"=green
 MENUCOLOR="Amulet of Yendor named"=magenta
 MENUCOLOR="gold piece"=yellow
@@ -129,15 +137,15 @@ MENUCOLOR="Both of the above"=lightgreen
 MENUCOLOR=". -.* \[(Unskilled|Basic|Skilled|Expert|Master)"=white
 
 # vegan
-MENUCOLOR="(food |cram |K-|C-)ration|gunyoki"=green&bold
-MENUCOLOR="lembas wafer|melon|carrot|tins? .* spinach"=green&bold
-MENUCOLOR=" oranges?( named.*)?$"=green&bold # avoid coloring orange DSM
-MENUCOLOR=" pears?( named.*)?$"=green&bold # avoid coloring pearl rings
-MENUCOLOR=" (apple|banana|kelp|eucalyptus|garlic|wolfsbane)"=green&bold
-MENUCOLOR=" (slime mold|brain)"=green&bold  ## YOUR FRUIT HERE
-MENUCOLOR="(tins? of )?(gelatinous cube|acid blob|quivering blob)( corpse)?"=green&bold
-MENUCOLOR="(tins? of )?(blue|spotted|ochre) jelly( corpse)?"=green&bold
-MENUCOLOR="(tins? of )?lichen|shrieker|violet fungus|(brown|yellow|green|red) mold( corpse)?"=green&bold
+MENUCOLOR="(food |cram |K-|C-)ration|gunyoki"=green
+MENUCOLOR="lembas wafer|melon|carrot|tins? .* spinach"=green
+MENUCOLOR=" oranges?( named.*)?$"=green # avoid coloring orange DSM
+MENUCOLOR=" pears?( named.*)?$"=green # avoid coloring pearl rings
+MENUCOLOR=" (apple|banana|kelp|eucalyptus|garlic|wolfsbane)"=green
+MENUCOLOR=" (slime mold|brain)"=green  ## YOUR FRUIT HERE
+MENUCOLOR="(tins? of )?(gelatinous cube|acid blob|quivering blob)( corpse)?"=green
+MENUCOLOR="(tins? of )?(blue|spotted|ochre) jelly( corpse)?"=green
+MENUCOLOR="(tins? of )?lichen|shrieker|violet fungus|(brown|yellow|green|red) mold( corpse)?"=green
 
 # vegetarian
 MENUCOLOR="egg|pancake|fortune cookie|candy bar|royal jelly|cream pie|candle"=green
@@ -177,6 +185,7 @@ MENUCOLOR="tooled horn|fire horn|frost horn|horn .* (tooled|fire|frost)"=magenta
 MENUCOLOR=" harp"=magenta
 MENUCOLOR=" bugle"=magenta
 MENUCOLOR=" flute"=magenta
+MENUCOLOR=" whistle"=magenta
 
 # unidentified magic armor
 MENUCOLOR="piece of cloth|opera cloak|ornamental cope|tattered cape"=magenta
@@ -211,11 +220,11 @@ MENUCOLOR=" Amulet of Yendor named"=magenta&bold&underline
 ##################
 # CURSED GOODIES #
 ##################
-MENUCOLOR=" cursed.* bag .* holding"=red&bold
-MENUCOLOR=" cursed.* luck(stone)?($| )"=red&bold
-MENUCOLOR=" cursed.* unicorn horn"=red&bold
-MENUCOLOR=" cursed.* (Bell of Opening|silver bell|Candelabrum of Invocation|candelabrum|Book of the Dead|papyrus spellbook)"=red&bold
-MENUCOLOR="cursed tins? .* spinach|tins? .* spinach .* (cursed|C($| ))"=red
+MENUCOLOR=" cursed.* bag .* holding"=red&inverse
+MENUCOLOR=" cursed.* luck(stone)?($| )"=red&inverse
+MENUCOLOR=" cursed.* unicorn horn"=red&inverse
+MENUCOLOR=" cursed.* (Bell of Opening|silver bell|Candelabrum of Invocation|candelabrum|Book of the Dead|papyrus spellbook)"=red&inverse
+MENUCOLOR="cursed tins? .* spinach|tins? .* spinach .* (cursed|C($| ))"=red&inverse
 
 #############
 # BAD STUFF #
@@ -306,6 +315,3 @@ MENUCOLOR="Info on what a given key does."=none
 MENUCOLOR="Full list of keyboard commands."=none
 MENUCOLOR="altkeyhandler"=none
 MENUCOLOR="fruit.*\["=none
-
-# we might want to autopickup food, but never corpses
-autopickup_exception="* corpse*"
