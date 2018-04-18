@@ -28,15 +28,20 @@ exec --no-startup-id amixer sset Master 50%
 exec amixer sset Master unmute
 
 # Wallpaper restoring
-#exec --no-startup-id nitrogen --restore
-exec feh --bg-scale ~/.i3/wallpaper.png
+exec --no-startup-id nitrogen --restore
+#exec feh --bg-scale ~/.i3/wallpaper.png
 
 # Press again $mod+number to return to workspace you were working on
 workspace_auto_back_and_forth yes
 
+smart_gaps on
+gaps inner 15
+gaps outer 0
+
 # BORDERS ======================
 # red
-set $bo #FF0000
+# set $bo #FF0000
+set $bo #00ffff
 # 2nd color - gray
 set $se #666666
 
@@ -51,12 +56,12 @@ bar
 {
 	colors 
 	{
-    separator #ff0000
+    separator #00ffff
     background #1e1e1e
     statusline #ffffff
 
     # type              border  bg      font
-    focused_workspace   #ffffff #0f0f0f #ff0000
+    focused_workspace   #ffffff #0f0f0f #00ffff
     active_workspace    #fdf6e3 #6c71c4 #fdf6e3
     inactive_workspace  #586e75 #1e1e1e #FFFFFF
     urgent_workspace    #d33682 #d33682 #fdf6e3
@@ -69,6 +74,7 @@ bar
   #font pango:Terminus 10
   font pango:Insonsolata 10
 	status_command i3status
+  tray_output primary
 }
 # =======================================================
 
@@ -79,6 +85,7 @@ bindsym $mod+x exec xterm
 bindsym $mod+m exec xterm -e ncmpcpp -s visualizer -S browser
 bindsym $mod+n exec xterm -e mc
 bindsym $mod+F4 exec xterm -e htop
+bindsym $mod+v exec xterm -e gvim
 bindsym $mod+q exec xterm -e links
 # Change keyboard layout
 bindsym $mod+F7 exec setxkbmap pl
@@ -169,15 +176,17 @@ bindsym $mod+Shift+7 move container to workspace $tag7
 bindsym $mod+Shift+8 move container to workspace $tag8
 bindsym $mod+Shift+9 move container to workspace $tag9
 
+# TODO
+workspace $tag2 output VGA-1
 workspace $tag6 output HDMI1
 workspace $tag7 output VGA1
 
-# for_window [workspace=$tag8] floating enable
+for_window [workspace=$tag8] floating enable
 
 # Assign programs to specific workspace
-assign [class="(?i)Chromium"] $tag1
-assign [class="(?i)Firefox"] $tag1
-assign [class="(?i)Pycharm"] $tag2
+# assign [class="(?i)Chromium"] $tag1
+# assign [class="(?i)Firefox"] $tag1
+# assign [class="(?i)Pycharm"] $tag2
 assign [class="(?i)Thunderbird"] $tag9
 
 # Volume control
@@ -250,4 +259,3 @@ mode "resize"
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 }
-
