@@ -28,7 +28,6 @@ exec --no-startup-id amixer sset Master 50%
 exec amixer sset Master unmute
 
 # Wallpaper restoring
-# exec --no-startup-id nitrogen --restore
 exec feh --bg-scale ~/.i3/wallpaper.png
 
 # Press again $mod+number to return to workspace you were working on
@@ -40,8 +39,11 @@ gaps outer 0
 
 # BORDERS ======================
 # red
-# set $bo #FF0000
-set $bo #00ffff
+set $bo #FF0000
+# cyan
+# set $bo #00ffff
+# magenta
+# set $bo #54487a
 # 2nd color - gray
 set $se #666666
 
@@ -54,26 +56,29 @@ client.urgent               $se     $se         $se     $se
 # Bar
 bar 
 {
-	colors 
-	{
-    separator #00ffff
+    colors 
+    {
+    #magenta
+    #separator #54487a
+    #red
+    separator #ff0000
     background #1e1e1e
     statusline #ffffff
 
     # type              border  bg      font
-    focused_workspace   #ffffff #0f0f0f #00ffff
+    focused_workspace   #ff0000 #0f0f0f #ff0000
     active_workspace    #fdf6e3 #6c71c4 #fdf6e3
-    inactive_workspace  #586e75 #1e1e1e #FFFFFF
+    inactive_workspace  #ffffff #1e1e1e #FFFFFF
     urgent_workspace    #d33682 #d33682 #fdf6e3
   }
     
-	# i3bar position
+    # i3bar position
   # position top
-	position bottom
+    position bottom
 
   #font pango:Terminus 10
   font pango:Insonsolata 10
-	status_command i3status
+    status_command i3status
   tray_output primary
 }
 # =======================================================
@@ -120,7 +125,7 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-							
+                            
 # Move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
@@ -196,8 +201,8 @@ bindsym $mod+F12 exec amixer set Master 5%+
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 
 # Brightness control
-bindsym $mod+F9 exec xbacklight -dec 5
-bindsym $mod+F10 exec xbacklight -inc 5
+bindsym $mod+F9 exec "light -U 5; notify-send 'brightness down'"
+bindsym $mod+F10 exec "light -A 5; notify-send 'brightness up'"
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -228,34 +233,34 @@ set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) re
 mode "$mode_system" 
 {
     bindsym l exec --no-startup-id $Locker, mode "default"
-	bindsym e exec --no-startup-id i3-msg exit, mode "default"
-	bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-	bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
-	bindsym r exec --no-startup-id systemctl reboot, mode "default"
-	bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 # =======================================================
 
 mode "resize" 
 {
-	set $Size 3
-	# These bindings trigger as soon as you enter the resize mode
-	bindsym l resize shrink width $Size px or $Size ppt
-	bindsym j resize grow height $Size px or $Size ppt
-	bindsym k resize shrink height $Size px or $Size ppt
-	bindsym h resize grow width $Size px or $Size ppt
+    set $Size 3
+    # These bindings trigger as soon as you enter the resize mode
+    bindsym l resize shrink width $Size px or $Size ppt
+    bindsym j resize grow height $Size px or $Size ppt
+    bindsym k resize shrink height $Size px or $Size ppt
+    bindsym h resize grow width $Size px or $Size ppt
 
-	# Same bindings, but for the arrow keys
-	bindsym Left resize shrink width $Size px or $Size ppt
-	bindsym Down resize grow height $Size px or $Size ppt
-	bindsym Up resize shrink height $Size px or $Size ppt
-	bindsym Right resize grow width $Size px or $Size ppt
+    # Same bindings, but for the arrow keys
+    bindsym Left resize shrink width $Size px or $Size ppt
+    bindsym Down resize grow height $Size px or $Size ppt
+    bindsym Up resize shrink height $Size px or $Size ppt
+    bindsym Right resize grow width $Size px or $Size ppt
 
-	# Back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    # Back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
