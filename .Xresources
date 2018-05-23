@@ -26,38 +26,38 @@ xterm*highlightSelection: true
 xterm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 
 ! special
-xterm*.foreground:   #c5c8c6
-xterm*.background:   #0e0e0e
-xterm*.cursorColor:  #c5c8c6
+xterm*.foreground:   #ffffff
+xterm*.background:   #0b0b0b
+xterm*.cursorColor:  #ffffff
 
 ! black
-xterm*.color0:       #101010
-xterm*.color8:       #525252
+xterm*.color0:       #424242
+xterm*.color8:       #424242
 
 ! red
-xterm*.color1:       #00ffff
-xterm*.color9:       #00ffff
+xterm*.color1:       #ff0000
+xterm*.color9:       #ff0000
 
 ! green
-xterm*.color2:       #ffffff
-xterm*.color10:      #ffffff
+xterm*.color2:        #929292
+xterm*.color10:       #929292
 
 ! yellow
-xterm*.color3:       #2f2f2f
-xterm*.color11:      #2f2f2f
+xterm*.color3:       #cecb00
+xterm*.color11:      #fffd00
 
 ! blue
-xterm*.color4:       #686868
-xterm*.color12:      #686868
+xterm*.color4:       #001cd1
+xterm*.color12:      #0026ff
 
 ! magenta
-xterm*.color5:       #747474
-xterm*.color13:      #747474
+xterm*.color5:       #929292
+xterm*.color13:      #929292
 
 ! cyan
-xterm*.color6:       #00ffff
-xterm*.color14:      #00ffff
+xterm*.color6:       #0dcdcd
+xterm*.color14:      #14ffff
 
 ! white
-xterm*.color7:       #ffffff
+xterm*.color7:       #e5e5e5
 xterm*.color15:      #ffffff

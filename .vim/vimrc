@@ -12,8 +12,9 @@ if has("gui_running")
   set guioptions-=L  "remove left-hand scroll bar
   set vb t_vb=
 else
-  " colorscheme 256_noir
-  colorscheme cyan
+  colorscheme 256_noir
+  " colorscheme cyan
+  " colorscheme dracula
 endif
 
 set encoding=utf-8
@@ -28,6 +29,7 @@ set t_Co=256
 set background=dark
 let mapleader=" "
 set showtabline=2
+set backspace=indent,eol,start
 	
 "Set incremental searching	
 set incsearch
@@ -67,9 +69,9 @@ set visualbell
 set noerrorbells
 set visualbell t_vb=
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 " Highlight current line and column
 " au WinLeave * set nocursorline nocursorcolumn

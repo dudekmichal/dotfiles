@@ -3,13 +3,16 @@ export TERM="xterm-256color"
 # prompt
 setopt PROMPT_SUBST
 PROMPT='[%m] %{${fg[red]}%}::%{$reset_color%} '
+#PROMPT='[%m] %{${fg[magenta]}%}::%{$reset_color%} '
 
 # colors
 autoload -U colors
 colors
 setxkbmap -option ctrl:nocaps
-# LS_COLORS=$LS_COLORS:'di=31:ex=32:*.tar=blue:*.gz=blue:*.png=35:*.jpg=35:*.mp3=1;33:*.flac=1;33' ; export LS_COLORS
+# red dirs
 LS_COLORS=$LS_COLORS:'di=31:ex=32:*.tar=blue:*.gz=blue:*.png=35:*.jpg=35:*.mp3=1;33:*.flac=1;33' ; export LS_COLORS
+# magenta dirs
+#LS_COLORS=$LS_COLORS:'di=35:ex=32:*.tar=blue:*.gz=blue:*.png=35:*.jpg=35:*.mp3=1;33:*.flac=1;33' ; export LS_COLORS
 
 # completion
 autoload -U compinit
@@ -60,7 +63,7 @@ alias ll="clear;ls --color -lah"
 alias l.='ls -d .* --color=auto'
 alias df='df -kTh'
 alias ip='sudo ip addr show'
-alias ..="cd ..;clear;ls --color -lh"
+alias ..="cd ..;clear;ls --color -lh;pwd"
 alias ...="cd ../..;clear;ls --color -lh"
 alias ....="cd ../../..;clear;ls --color -lh"	
 alias reb="sudo systemctl reboot"
@@ -68,11 +71,13 @@ alias off="sudo systemctl poweroff"
 alias sus="sudo systemctl suspend"
 alias w="sudo wifi-menu"
 alias genpass="apg -a 0 -m 14 -x 14 -M SNCL"
-alias n="ncmpcpp -s media_library -S visualizer"
+alias gcal="gcalcli calw 1 --color_border 'white' --color_date 'red' --width 12"
+alias n="ncmpcpp -s visualizer -S browser"
 alias news="newsbeuter"
 alias um="sudo umount /home/qeni/mnt"
 alias pack="tar -zcvf"
 alias rr="ranger"
+alias ascii="mplayer -vo caca"
 # apt aliases
 alias ai="sudo apt install"
 alias as="apt search"
@@ -121,6 +126,7 @@ alias gb="git branch"
 alias gr="git reset" # e.g. git reset abc.txt
 alias grc="git reset --hard HEAD~1" # git reset commit
 alias gta="git tag -a -m"
+alias unstage="git rm --cached"
 # alias w="nmtui"
 alias nm="sudo systemctl start NetworkManager.service"
 alias yt="youtube-dl -c -f 22/43/18/best"
@@ -130,9 +136,16 @@ alias bat='acpi | grep -o "[0-9]*%"'
 alias scannet='nmap -sn 192.168.1.0/24'
 # tmp aliases
 # xrandr alias
-alias hdmi1='xrandr --output HDMI1 --mode 1360x768 --right-of LVDS1'
-alias vga1='xrandr --output VGA1 --mode 1024x768 --right-of LVDS1'
+alias hdmi1='xrandr --output HDMI-1 --mode 1360x768 --right-of LVDS-1'
+alias vga1='xrandr --output VGA-1 --mode 1024x768 --right-of LVDS-1'
+alias sam1='xrandr --output VGA-1 --mode 1280x1024 --right-of LVDS-1'
 alias def='xrandr -s 0'
+#other
+# usage: resize 50% input.png output.png
+alias resize='convert -resize'
+alias eZ="vim ~/.zshrc"
+alias eV="vim ~/.vim/vimrc"
+alias e3="vim ~/.i3/config"
 
 #copy and go to dir
 cpg()
@@ -161,6 +174,7 @@ extract()
     case $1 in
     *.tar.bz2)   tar xjf $1     ;;
     *.tar.gz)    tar xzf $1     ;;
+    *.tar.xz)    tar xf $1      ;;
     *.bz2)       bunzip2 $1     ;;
     *.rar)       unrar e $1     ;;
     *.gz)        gunzip $1      ;;
@@ -177,4 +191,6 @@ extract()
   fi
 }
 
-screenfetch
+#screenfetch
+#neofetch --speed_type "max" --speed_shorthand "off" --cpu_temp "C" --distro_shorthand "on" --uptime_shorthand "tiny" --gtk2 "off" --gtk3 "off" --ascii_distro "debian"
+#neofetch --speed_type "max" --speed_shorthand "off" --cpu_temp "C" --distro_shorthand "on" --uptime_shorthand "tiny" --gtk2 "off" --gtk3 "off" --color_blocks "off" --ascii_distro "gentoo"
