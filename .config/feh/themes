@@ -1,0 +1,7 @@
+feh -B #0b0b0b \
+--draw-filename \
+--no-menus \
+--hide-pointer \
+--scale-down \
+--auto-zoom \
+--auto-rotate \
