@@ -1,9 +1,9 @@
 # =======================================================
 set $tag1 "1: www"
 set $tag2 "2: code"
-set $tag3 "3: ssh"
+set $tag3 "3: music"
 set $tag4 "4: irc"
-set $tag5 "5: music"
+set $tag5 "5: tmp"
 set $tag6 "6: hdmi"
 set $tag7 "7: vga"
 set $tag8 "8: float"
@@ -17,7 +17,7 @@ set $mod Mod1
 font pango:Terminus 8
 
 # Really small borders and no title for windows
-for_window [class="^."] border pixel 2
+for_window [class="^."] border pixel 3
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -28,22 +28,25 @@ exec --no-startup-id amixer sset Master 50%
 exec amixer sset Master unmute
 
 # Wallpaper restoring
+#exec --no-startup-id nitrogen --restore
 exec feh --bg-scale ~/.i3/wallpaper.png
 
 # Press again $mod+number to return to workspace you were working on
 workspace_auto_back_and_forth yes
 
-smart_gaps on
-gaps inner 15
-gaps outer 0
+#smart_gaps on
+#gaps inner 15
+#gaps outer 0
 
 # BORDERS ======================
 # red
-set $bo #FF0000
+set $bo #ff0000
 # cyan
 # set $bo #00ffff
 # magenta
 # set $bo #54487a
+# solarized
+# set $bo #268bd2
 # 2nd color - gray
 set $se #666666
 
@@ -56,29 +59,31 @@ client.urgent               $se     $se         $se     $se
 # Bar
 bar 
 {
-    colors 
-    {
-    #magenta
-    #separator #54487a
+	colors 
+	{
     #red
     separator #ff0000
-    background #1e1e1e
+    # magenta
+    #separator #54487a
+    # solarized
+    # separator #268bd2
+    background #0b0b0b
     statusline #ffffff
 
     # type              border  bg      font
-    focused_workspace   #ff0000 #0f0f0f #ff0000
+    focused_workspace   $bo     #0f0f0f $bo 
     active_workspace    #fdf6e3 #6c71c4 #fdf6e3
     inactive_workspace  #ffffff #1e1e1e #FFFFFF
     urgent_workspace    #d33682 #d33682 #fdf6e3
   }
     
-    # i3bar position
+	# i3bar position
   # position top
-    position bottom
+	position bottom
 
-  #font pango:Terminus 10
-  font pango:Insonsolata 10
-    status_command i3status
+  font pango:Terminus 9
+  #font pango:Inconsolata 9
+	status_command i3status
   tray_output primary
 }
 # =======================================================
@@ -87,7 +92,8 @@ bar
 # Bindings
 
 bindsym $mod+x exec xterm
-bindsym $mod+m exec xterm -e ncmpcpp -s visualizer -S browser
+#bindsym $mod+m exec xterm -e ncmpcpp -s visualizer -S browser
+bindsym $mod+m exec xterm -e mocp
 bindsym $mod+n exec xterm -e mc
 bindsym $mod+F4 exec xterm -e htop
 bindsym $mod+v exec xterm -e gvim
@@ -125,7 +131,7 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-                            
+							
 # Move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
@@ -233,34 +239,34 @@ set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) re
 mode "$mode_system" 
 {
     bindsym l exec --no-startup-id $Locker, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+	bindsym e exec --no-startup-id i3-msg exit, mode "default"
+	bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+	bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+	bindsym r exec --no-startup-id systemctl reboot, mode "default"
+	bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
 
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 # =======================================================
 
 mode "resize" 
 {
-    set $Size 3
-    # These bindings trigger as soon as you enter the resize mode
-    bindsym l resize shrink width $Size px or $Size ppt
-    bindsym j resize grow height $Size px or $Size ppt
-    bindsym k resize shrink height $Size px or $Size ppt
-    bindsym h resize grow width $Size px or $Size ppt
+	set $Size 3
+	# These bindings trigger as soon as you enter the resize mode
+	bindsym l resize shrink width $Size px or $Size ppt
+	bindsym j resize grow height $Size px or $Size ppt
+	bindsym k resize shrink height $Size px or $Size ppt
+	bindsym h resize grow width $Size px or $Size ppt
 
-    # Same bindings, but for the arrow keys
-    bindsym Left resize shrink width $Size px or $Size ppt
-    bindsym Down resize grow height $Size px or $Size ppt
-    bindsym Up resize shrink height $Size px or $Size ppt
-    bindsym Right resize grow width $Size px or $Size ppt
+	# Same bindings, but for the arrow keys
+	bindsym Left resize shrink width $Size px or $Size ppt
+	bindsym Down resize grow height $Size px or $Size ppt
+	bindsym Up resize shrink height $Size px or $Size ppt
+	bindsym Right resize grow width $Size px or $Size ppt
 
-    # Back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+	# Back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }

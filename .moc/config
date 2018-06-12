@@ -23,7 +23,7 @@ MusicDir = ~/music
 # /usr/share/moc/themes/ (depends on installation prefix) or
 # ~/.moc/themes/ .
 #
-Theme = solarized
+Theme = red
 #=================================================================
 
 #=================================================================

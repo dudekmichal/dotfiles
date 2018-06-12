@@ -13,12 +13,14 @@ if has("gui_running")
   set vb t_vb=
 else
   colorscheme 256_noir
+  " colorscheme solarized
   " colorscheme cyan
   " colorscheme dracula
 endif
 
 set encoding=utf-8
 set nocompatible
+set updatetime=100
 syntax on
 filetype on
 filetype plugin on

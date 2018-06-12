@@ -1,7 +1,8 @@
 ! --- ~/.Xresources ---
 
-xterm*faceName: Inconsolata
-xterm*faceSize: 10
+!xterm*faceName: Inconsolata
+xterm*faceName: Terminus
+xterm*faceSize: 9
 xterm*xftAntialias: true
 XTerm*metaSendsEscape: true
 
@@ -47,16 +48,16 @@ xterm*.color3:       #cecb00
 xterm*.color11:      #fffd00
 
 ! blue
-xterm*.color4:       #001cd1
-xterm*.color12:      #0026ff
+xterm*.color4:       #ff0000
+xterm*.color12:      #ff0000
 
 ! magenta
 xterm*.color5:       #929292
 xterm*.color13:      #929292
 
 ! cyan
-xterm*.color6:       #0dcdcd
-xterm*.color14:      #14ffff
+xterm*.color6:       #ff0000
+xterm*.color14:      #ff0000
 
 ! white
 xterm*.color7:       #e5e5e5
