@@ -45,11 +45,11 @@ mpd_music_dir = /home/qeni/music
 ## configuration (it has to be put into mpd.conf):
 ##
 audio_output {
-        type            "fifo"
-        name            "Visualizer feed"
-        path            "/tmp/mpd.fifo"
-        format          "44100:16:2"
- }
+type  "fifo"
+name  "Visualizer feed"
+path  "/tmp/mpd.fifo"
+format  "44100:16:2"
+}
 
 #
 visualizer_fifo_path = /tmp/mpd.fifo
@@ -119,11 +119,11 @@ visualizer_look = ==
 ## Time of inactivity (in seconds) after playlist
 ## highlighting will be disabled (0 = always on).
 ##
-#playlist_disable_highlight_delay = 5
+playlist_disable_highlight_delay = 0
 #
 ## Defines how long messages are supposed to be visible.
 ##
-#message_delay_time = 5
+message_delay_time = 1
 #
 ##### song format #####
 ##
@@ -288,7 +288,7 @@ visualizer_look = ==
 ##
 execute_on_song_change = "/home/qeni/.ncmpcpp/notify_song.sh"
 #
-#playlist_show_remaining_time = no
+playlist_show_remaining_time = yes
 #
 #playlist_shorten_total_times = no
 #
@@ -349,23 +349,23 @@ user_interface = alternative
 #
 #default_tag_editor_pattern = %n - %t
 #
-#header_visibility = yes
+header_visibility = yes
 #
-#statusbar_visibility = yes
+statusbar_visibility = yes
 #
-#titles_visibility = yes
+titles_visibility = yes
 #
-#header_text_scrolling = yes
+header_text_scrolling = yes
 #
-#cyclic_scrolling = no
+cyclic_scrolling = no
 #
-#lines_scrolled = 2
+lines_scrolled = 2
 #
-#follow_now_playing_lyrics = no
+follow_now_playing_lyrics = yes
 #
-#fetch_lyrics_for_current_song_in_background = no
+fetch_lyrics_for_current_song_in_background = yes
 #
-#store_lyrics_in_song_dir = no
+store_lyrics_in_song_dir = yes
 #
 #generate_win32_compatible_filenames = yes
 #
@@ -413,17 +413,17 @@ locked_screen_width_part = 60
 #
 ask_for_locked_screen_width_part = no
 #
-#jump_to_now_playing_song_at_start = yes
+jump_to_now_playing_song_at_start = no
 #
-#ask_before_clearing_playlists = yes
+ask_before_clearing_playlists = yes
 #
-#clock_display_seconds = no
+clock_display_seconds = yes
 #
-#display_volume_level = yes
+display_volume_level = yes
 #
-#display_bitrate = no
+display_bitrate = yes
 #
-#display_remaining_time = no
+display_remaining_time = yes
 #
 ## Available values: none, basic, extended.
 ##
@@ -438,7 +438,7 @@ ask_for_locked_screen_width_part = no
 #
 #block_search_constraints_change_if_items_found = yes
 #
-#mouse_support = yes
+mouse_support = yes
 #
 #mouse_list_scroll_whole_page = yes
 #
@@ -450,7 +450,7 @@ ask_for_locked_screen_width_part = no
 #
 #media_library_sort_by_mtime = no
 #
-#enable_window_title = yes
+enable_window_title = no
 #
 ##
 ## Note: You can choose default search mode for search
@@ -465,48 +465,21 @@ ask_for_locked_screen_width_part = no
 ##
 #
 #search_engine_default_search_mode = 1
-#
 external_editor = vim
-#
-## Note: set to yes if external editor is a console application.
-##
-#use_console_editor = yes
-#
-##### colors definitions #####
-#
+use_console_editor = yes
 colors_enabled = yes
-#
-empty_tag_color = blue
-#
-header_window_color = blue
-#
+empty_tag_color = black
+header_window_color = white
 volume_color = red
-#
-state_line_color = green
-#
-state_flags_color = green
-#
+state_line_color = red
+state_flags_color = red
 main_window_color = green
-#
-#color1 = white
-#
-#color2 = green
-#
 main_window_highlight_color = red
-#
-progressbar_color = blue
-#
-progressbar_elapsed_color = green
-#
-statusbar_color = green
-#
-alternative_ui_separator_color = blue
-#
+progressbar_color = red
+progressbar_elapsed_color = white
+statusbar_color = white
+alternative_ui_separator_color = black
 active_column_color = red
-#
-#visualizer_color = yellow
-#
-window_border_color = blue
-#
+visualizer_color = black,white,red,white
+window_border_color = red
 active_window_border = red
-#

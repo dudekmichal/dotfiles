@@ -1,0 +1,9 @@
+[credential]
+	helper = credential-store
+[user]
+	email = michal.dudek1995@gmail.com
+	name = Michal Dudek
+[merge]
+	tool = vimdiff
+[mergetool]
+	prompt = false
