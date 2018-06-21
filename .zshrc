@@ -1,16 +1,17 @@
 export TERM="xterm-256color"
+#export LANG="pl_PL.UTF-8"
 
 # prompt
 setopt PROMPT_SUBST
-PROMPT='[%m] %{${fg[red]}%}::%{$reset_color%} '
+PROMPT='[%m] %{${fg[magenta]}%}::%{$reset_color%} '
 #PROMPT='[%m] %{${fg[magenta]}%}::%{$reset_color%} '
 
 # colors
 autoload -U colors
 colors
-setxkbmap -option ctrl:nocaps
+#setxkbmap -option ctrl:nocaps
 # red dirs
-LS_COLORS=$LS_COLORS:'di=31:ex=32:*.tar=blue:*.gz=blue:*.png=35:*.jpg=35:*.mp3=1;33:*.flac=1;33' ; export LS_COLORS
+LS_COLORS=$LS_COLORS:'di=34:ex=32:*.tar=blue:*.gz=blue:*.png=35:*.jpg=35:*.mp3=1;33:*.flac=1;33' ; export LS_COLORS
 # magenta dirs
 #LS_COLORS=$LS_COLORS:'di=35:ex=32:*.tar=blue:*.gz=blue:*.png=35:*.jpg=35:*.mp3=1;33:*.flac=1;33' ; export LS_COLORS
 
@@ -128,7 +129,6 @@ alias grc="git reset --hard HEAD~1" # git reset commit
 alias gta="git tag -a -m"
 alias unstage="git rm --cached"
 # alias w="nmtui"
-alias nm="sudo systemctl start NetworkManager.service"
 alias yt="youtube-dl -c -f 22/43/18/best"
 alias ytm="youtube-dl --extract-audio --audio-format mp3"
 alias p="sudo proxychains"
@@ -193,4 +193,4 @@ extract()
 
 #screenfetch
 #neofetch --speed_type "max" --speed_shorthand "off" --cpu_temp "C" --distro_shorthand "on" --uptime_shorthand "tiny" --gtk2 "off" --gtk3 "off" --ascii_distro "debian"
-#neofetch --speed_type "max" --speed_shorthand "off" --cpu_temp "C" --distro_shorthand "on" --uptime_shorthand "tiny" --gtk2 "off" --gtk3 "off" --color_blocks "off" --ascii_distro "gentoo"
+neofetch --speed_type "max" --speed_shorthand "off" --cpu_temp "C" --distro_shorthand "on" --uptime_shorthand "tiny" --gtk2 "off" --gtk3 "off" --color_blocks "off" --ascii_distro "gentoo" --ascii_colors 93

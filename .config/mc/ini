@@ -81,7 +81,7 @@ editor_backup_extension=~
 editor_filesize_threshold=64M
 editor_stop_format_chars=-+*\\,.;:&>
 mcview_eof=
-skin=red
+skin=magenta
 
 [Layout]
 message_visible=1
@@ -102,7 +102,7 @@ timeformat_recent=%Y-%m-%d
 timeformat_old=%Y-%m-%d
 ftp_proxy_host=gate
 ftpfs_password=anonymous@
-display_codepage=UTF-8
+display_codepage=ISO-8859-1
 source_codepage=Other_8_bit
 autodetect_codeset=
 clipboard_store=

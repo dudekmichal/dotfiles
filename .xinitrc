@@ -4,18 +4,18 @@ session="i3"
 #session="kde"
 #session="gnome"
 
-setxkbmap $language
-xset b off
-xset b 0 0 0
-xset +fp /usr/share/fonts/local
-xset fp rehash
+#setxkbmap $language
+# xset b off
+# xset b 0 0 0
+# xset +fp /usr/share/fonts/local
+# xset fp rehash
 xrdb -merge $HOME/.Xresources
 
 # udiskie -t -n --file-manager=pcmanfm &
 
 # Redshift with Wroclaw location
-redshift -l 51.107:17.04 -t 5500:3500 -b 1.0:0.9 &
-mpd ~/.mpd/mpd.conf &
+# redshift -l 51.107:17.04 -t 5500:3500 -b 1.0:0.9 &
+mpd ~/.mpdconf &
 
 # Volume control
 amixer sset Master 60%
