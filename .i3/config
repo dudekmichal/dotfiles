@@ -206,8 +206,10 @@ bindsym $mod+F12 exec amixer set Master 5%+
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 
 # Brightness control
-bindsym $mod+F9 exec "light -U 5; notify-send 'brightness down'"
-bindsym $mod+F10 exec "light -A 5; notify-send 'brightness up'"
+# bindsym $mod+F9 exec "light -U 5; notify-send 'brightness down'"
+# bindsym $mod+F10 exec "light -A 5; notify-send 'brightness up'"
+bindsym $mod+F9 exec "xbacklight -dec 5; notify-send 'brightness down'"
+bindsym $mod+F10 exec "xbacklight -inc 5; notify-send 'brightness up'"
 
 # focus the child container
 #bindsym $mod+d focus child
