@@ -34,17 +34,17 @@ exec feh --bg-scale ~/.i3/wallpaper.png
 # Press again $mod+number to return to workspace you were working on
 workspace_auto_back_and_forth yes
 
-#smart_gaps on
-#gaps inner 15
-#gaps outer 0
+smart_gaps on
+gaps inner 15
+gaps outer 0
 
 # BORDERS ======================
 # red
-set $bo #ff0000
+# set $bo #ff0000
 # cyan
 # set $bo #00ffff
 # magenta
-# set $bo #54487a
+ set $bo #54487a
 # solarized
 # set $bo #268bd2
 # 2nd color - gray
@@ -57,12 +57,12 @@ client.focused_inactive     $se     $se         $se     $se
 client.urgent               $se     $se         $se     $se
 
 # Bar
-bar 
+bar
 {
-	colors 
+	colors
 	{
     #red
-    separator #ff0000
+    separator #54487a
     # magenta
     #separator #54487a
     # solarized
@@ -71,12 +71,12 @@ bar
     statusline #ffffff
 
     # type              border  bg      font
-    focused_workspace   $bo     #0f0f0f $bo 
+    focused_workspace   $bo     #0f0f0f $bo
     active_workspace    #fdf6e3 #6c71c4 #fdf6e3
     inactive_workspace  #ffffff #1e1e1e #FFFFFF
     urgent_workspace    #d33682 #d33682 #fdf6e3
   }
-    
+
 	# i3bar position
   # position top
 	position bottom
@@ -92,8 +92,8 @@ bar
 # Bindings
 
 bindsym $mod+x exec xterm
-#bindsym $mod+m exec xterm -e ncmpcpp -s visualizer -S browser
-bindsym $mod+m exec xterm -e mocp
+bindsym $mod+m exec xterm -e ncmpcpp -s visualizer -S browser
+#bindsym $mod+m exec xterm -e mocp
 bindsym $mod+n exec xterm -e mc
 bindsym $mod+F4 exec xterm -e htop
 bindsym $mod+v exec xterm -e gvim
@@ -115,7 +115,6 @@ bindsym $mod+d exec /home/qeni/.i3/rofi.sh
 bindsym $mod+F2 mode "$mode_system"
 
 # Screenshots
-# bindsym --release Print exec scrot -s $HOME/pictures/screenshots/%y-%m-%d_%H:%M:%S_screenshot.png
 bindsym --release Print exec $HOME/.i3/take-screenshot-s
 
 # Code environment
@@ -188,16 +187,16 @@ bindsym $mod+Shift+8 move container to workspace $tag8
 bindsym $mod+Shift+9 move container to workspace $tag9
 
 # TODO
-workspace $tag2 output VGA-1
-workspace $tag6 output HDMI1
-workspace $tag7 output VGA1
+# workspace $tag2 output VGA-1
+# workspace $tag6 output HDMI1
+# workspace $tag7 output VGA1
 
 for_window [workspace=$tag8] floating enable
 
 # Assign programs to specific workspace
 # assign [class="(?i)Chromium"] $tag1
-# assign [class="(?i)Firefox"] $tag1
-# assign [class="(?i)Pycharm"] $tag2
+assign [class="(?i)Firefox"] $tag1
+assign [class="(?i)Pycharm"] $tag2
 assign [class="(?i)Thunderbird"] $tag9
 
 # Volume control
@@ -207,8 +206,10 @@ bindsym $mod+F12 exec amixer set Master 5%+
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 
 # Brightness control
-bindsym $mod+F9 exec "light -U 5; notify-send 'brightness down'"
-bindsym $mod+F10 exec "light -A 5; notify-send 'brightness up'"
+# bindsym $mod+F9 exec "light -U 5; notify-send 'brightness down'"
+# bindsym $mod+F10 exec "light -A 5; notify-send 'brightness up'"
+bindsym $mod+F9 exec "xbacklight -dec 5; notify-send 'brightness down'"
+bindsym $mod+F10 exec "xbacklight -inc 5; notify-send 'brightness up'"
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -236,14 +237,14 @@ bindsym $mod+r mode "resize"
 set $Locker exec ~/.i3/i3lock_blurred.sh
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
-mode "$mode_system" 
+mode "$mode_system"
 {
     bindsym l exec --no-startup-id $Locker, mode "default"
 	bindsym e exec --no-startup-id i3-msg exit, mode "default"
 	bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
 	bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
 	bindsym r exec --no-startup-id systemctl reboot, mode "default"
-	bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"  
+	bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
@@ -251,7 +252,7 @@ mode "$mode_system"
 }
 # =======================================================
 
-mode "resize" 
+mode "resize"
 {
 	set $Size 3
 	# These bindings trigger as soon as you enter the resize mode

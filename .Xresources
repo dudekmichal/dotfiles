@@ -36,29 +36,29 @@ xterm*.color0:       #424242
 xterm*.color8:       #424242
 
 ! red
-xterm*.color1:       #ff0000
-xterm*.color9:       #ff0000
+xterm*.color1:       #54487a
+xterm*.color9:       #54487a
 
 ! green
-xterm*.color2:        #929292
-xterm*.color10:       #929292
+xterm*.color2:        #73D216
+xterm*.color10:       #73D216
 
 ! yellow
-xterm*.color3:       #cecb00
-xterm*.color11:      #fffd00
+xterm*.color3:       #00ff00
+xterm*.color11:      #00ff00
 
 ! blue
-xterm*.color4:       #ff0000
-xterm*.color12:      #ff0000
+xterm*.color4:       #54487a
+xterm*.color12:      #54487a
 
 ! magenta
-xterm*.color5:       #929292
-xterm*.color13:      #929292
+xterm*.color5:       #54487a
+xterm*.color13:      #54487a
 
 ! cyan
-xterm*.color6:       #ff0000
-xterm*.color14:      #ff0000
+xterm*.color6:       #54487a
+xterm*.color14:      #54487a
 
 ! white
-xterm*.color7:       #e5e5e5
+xterm*.color7:       #ffffff
 xterm*.color15:      #ffffff

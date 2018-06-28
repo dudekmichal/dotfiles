@@ -350,6 +350,9 @@ shell/i/.avi
 shell/i/.mp4
   Open=(vlc %f >/dev/null 2>&1 &)
 
+shell/i/.mp3
+  Open=(vlc %f >/dev/null 2>&1 &)
+
 shell/i/.divx
   Open=(vlc %f >/dev/null 2>&1 &)
 
