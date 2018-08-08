@@ -3,17 +3,14 @@ export TERM="xterm-256color"
 
 # prompt
 setopt PROMPT_SUBST
-PROMPT='[%m] %{${fg[magenta]}%}::%{$reset_color%} '
-#PROMPT='[%m] %{${fg[magenta]}%}::%{$reset_color%} '
+PROMPT='[%m] %{${fg[red]}%}::%{$reset_color%} '
 
 # colors
 autoload -U colors
 colors
-#setxkbmap -option ctrl:nocaps
+setxkbmap -option ctrl:nocaps
 # red dirs
-LS_COLORS=$LS_COLORS:'di=34:ex=32:*.tar=blue:*.gz=blue:*.png=35:*.jpg=35:*.mp3=1;33:*.flac=1;33' ; export LS_COLORS
-# magenta dirs
-#LS_COLORS=$LS_COLORS:'di=35:ex=32:*.tar=blue:*.gz=blue:*.png=35:*.jpg=35:*.mp3=1;33:*.flac=1;33' ; export LS_COLORS
+LS_COLORS=$LS_COLORS:'di=31:ex=32:*.tar=red:*.gz=red:*.png=35:*.jpg=35:*.mp3=1;33:*.flac=1;33' ; export LS_COLORS
 
 # completion
 autoload -U compinit
@@ -62,6 +59,7 @@ unsetopt list_beep              # no bell on ambiguous completion
 alias l="clear;ls --color -lh"
 alias ll="clear;ls --color -lah"
 alias l.='ls -d .* --color=auto'
+alias cpp="rsync -avh --progress --partial"
 alias df='df -kTh'
 alias ip='sudo ip addr show'
 alias ..="cd ..;clear;ls --color -lh;pwd"
@@ -193,8 +191,11 @@ extract()
 }
 
 bindkey -v
+bindkey "^A" vi-beginning-of-line
+bindkey '^E' end-of-line
+bindkey "^D" delete-char-or-list
 bindkey '^R' history-incremental-search-backward
 
 #screenfetch
-#neofetch --speed_type "max" --speed_shorthand "off" --cpu_temp "C" --distro_shorthand "on" --uptime_shorthand "tiny" --gtk2 "off" --gtk3 "off" --ascii_distro "debian"
-neofetch --speed_type "max" --speed_shorthand "off" --cpu_temp "C" --distro_shorthand "on" --uptime_shorthand "tiny" --gtk2 "off" --gtk3 "off" --color_blocks "off" --ascii_distro "gentoo" --ascii_colors 93
+#neofetch --speed_type "max" --speed_shorthand "off" --cpu_temp "C" --distro_shorthand "on" --uptime_shorthand "tiny" --gtk2 "off" --gtk3 "off" --ascii_distro "debian" --color_blocks "off"
+#neofetch --speed_type "max" --speed_shorthand "off" --cpu_temp "C" --distro_shorthand "on" --uptime_shorthand "tiny" --gtk2 "off" --gtk3 "off" --color_blocks "off" --ascii_distro "gentoo"

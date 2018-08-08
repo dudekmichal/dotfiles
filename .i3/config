@@ -34,17 +34,17 @@ exec feh --bg-scale ~/.i3/wallpaper.png
 # Press again $mod+number to return to workspace you were working on
 workspace_auto_back_and_forth yes
 
-smart_gaps on
-gaps inner 15
-gaps outer 0
+# smart_gaps on
+# gaps inner 15
+# gaps outer 0
 
 # BORDERS ======================
 # red
-# set $bo #ff0000
+set $bo #ff0000
 # cyan
 # set $bo #00ffff
 # magenta
- set $bo #54487a
+# set $bo #54487a
 # solarized
 # set $bo #268bd2
 # 2nd color - gray
@@ -62,11 +62,7 @@ bar
 	colors
 	{
     #red
-    separator #54487a
-    # magenta
-    #separator #54487a
-    # solarized
-    # separator #268bd2
+    separator #ff0000
     background #0b0b0b
     statusline #ffffff
 
@@ -78,8 +74,8 @@ bar
   }
 
 	# i3bar position
-  # position top
-	position bottom
+  position top
+	# position bottom
 
   font pango:Terminus 9
   #font pango:Inconsolata 9
@@ -92,8 +88,8 @@ bar
 # Bindings
 
 bindsym $mod+x exec xterm
-bindsym $mod+m exec xterm -e ncmpcpp -s visualizer -S browser
-#bindsym $mod+m exec xterm -e mocp
+# bindsym $mod+m exec xterm -e ncmpcpp -s visualizer -S browser
+bindsym $mod+m exec xterm -e mocp
 bindsym $mod+n exec xterm -e mc
 bindsym $mod+F4 exec xterm -e htop
 bindsym $mod+v exec xterm -e gvim
@@ -106,10 +102,7 @@ bindsym $mod+F5 exec amixer -q set Master toggle
 bindsym $mod+c kill
 
 # Start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run -fn "-xos4-terminus-medium-r-*-*-12-*" -f -nb '#F7F7F7' -nf '#020202' -sb '#020202' -sf '#F7F7F7'
-# bindsym $mod+d exec dmenu_run -fn "-xos4-terminus-medium-r-*-*-12-*" -f -nb '#002b36' -nf '#FFFFFF' -sb '#268bd2' -sf '#F7F7F7'
 bindsym $mod+d exec /home/qeni/.i3/rofi.sh
-
 
 # Open menu with system commands
 bindsym $mod+F2 mode "$mode_system"
@@ -130,7 +123,7 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-							
+
 # Move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
@@ -197,6 +190,7 @@ for_window [workspace=$tag8] floating enable
 # assign [class="(?i)Chromium"] $tag1
 assign [class="(?i)Firefox"] $tag1
 assign [class="(?i)Pycharm"] $tag2
+assign [class="(?i)Webstorm"] $tag2
 assign [class="(?i)Thunderbird"] $tag9
 
 # Volume control

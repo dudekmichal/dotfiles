@@ -1,8 +1,5 @@
 language="pl"
-#session="lxde"
 session="i3"
-#session="kde"
-#session="gnome"
 
 setxkbmap $language
 # xset b off
