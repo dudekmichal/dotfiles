@@ -32,33 +32,33 @@ xterm*.background:   #0b0b0b
 xterm*.cursorColor:  #ffffff
 
 ! black
-xterm*.color0:       #424242
-xterm*.color8:       #424242
+xterm*.color0:       #282a2e
+xterm*.color8:       #373b41
 
 ! red
-xterm*.color1:       #54487a
-xterm*.color9:       #54487a
+xterm*.color1:       #a54242
+xterm*.color9:       #cc6666
 
 ! green
-xterm*.color2:        #73D216
-xterm*.color10:       #73D216
+xterm*.color2:        #8c9440
+xterm*.color10:       #b5bd68
 
 ! yellow
-xterm*.color3:       #00ff00
-xterm*.color11:      #00ff00
+xterm*.color3:       #de935f
+xterm*.color11:      #f0c674
 
 ! blue
-xterm*.color4:       #54487a
-xterm*.color12:      #54487a
+xterm*.color4:       #5f819d
+xterm*.color12:      #81a2be
 
 ! magenta
-xterm*.color5:       #54487a
-xterm*.color13:      #54487a
+xterm*.color5:       #85678f
+xterm*.color13:      #b294bb
 
 ! cyan
-xterm*.color6:       #54487a
-xterm*.color14:      #54487a
+xterm*.color6:       #5e8d87
+xterm*.color14:      #8abeb7
 
 ! white
-xterm*.color7:       #ffffff
-xterm*.color15:      #ffffff
+xterm*.color7:       #707880
+xterm*.color15:      #c5c8c6

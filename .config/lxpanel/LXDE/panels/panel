@@ -7,7 +7,7 @@ Global {
   margin=0
   widthtype=percent
   width=100
-  height=25
+  height=26
   transparent=1
   tintcolor=#000000
   alpha=234
@@ -48,13 +48,28 @@ Plugin {
   type=launchbar
   Config {
     Button {
+      id=google-chrome.desktop
+    }
+    Button {
       id=pcmanfm.desktop
     }
     Button {
-      id=lxde-x-www-browser.desktop
+      id=menu://applications/System/debian-xterm.desktop
     }
     Button {
-      id=menu://applications/System/debian-xterm.desktop
+      id=pycharm-community.desktop
+    }
+    Button {
+      id=lxappearance.desktop
+    }
+    Button {
+      id=lxmusic.desktop
+    }
+    Button {
+      id=vim.desktop
+    }
+    Button {
+      id=mousepad.desktop
     }
   }
 }
@@ -107,8 +122,13 @@ Plugin {
   Config {
     DisplayCPU=1
     DisplayRAM=1
-    CPUColor=#ff0000
-    RAMColor=#FF0000
+    CPUColor=#1793d0
+    RAMColor=#1793d0
+  }
+}
+Plugin {
+  type=netstatus
+  Config {
   }
 }
 Plugin {
@@ -130,16 +150,16 @@ Plugin {
   type=batt
   Config {
     BackgroundColor=black
-    ChargingColor1=#ff0000
-    ChargingColor2=#ff0000
+    ChargingColor1=#5f819d
+    ChargingColor2=#5f819d
     DischargingColor1=#777777
     DischargingColor2=#777777
     HideIfNoBattery=0
     AlarmCommand=notify-send "Niski poziom baterii" --icon=battery-caution
-    AlarmTime=5
+    AlarmTime=8
     BorderWidth=1
     Size=8
-    ShowExtendedInformation=0
+    ShowExtendedInformation=1
     BatteryNumber=0
   }
 }

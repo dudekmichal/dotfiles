@@ -3,14 +3,20 @@ export TERM="xterm-256color"
 
 # prompt
 setopt PROMPT_SUBST
-PROMPT='[%m] %{${fg[red]}%}::%{$reset_color%} '
+
+# red prompt
+# PROMPT='[%m] %{${fg[red]}%}::%{$reset_color%} '
+# blue prompt
+PROMPT='[%m] %{${fg[blue]}%}::%{$reset_color%} '
+
 
 # colors
 autoload -U colors
 colors
 setxkbmap -option ctrl:nocaps
-# red dirs
-LS_COLORS=$LS_COLORS:'di=31:ex=32:*.tar=red:*.gz=red:*.png=35:*.jpg=35:*.mp3=1;33:*.flac=1;33' ; export LS_COLORS
+
+# red=31, green=32, orange=33, blue=34, purple=35
+LS_COLORS=$LS_COLORS:'di=34:ex=32:*.tar=red:*.gz=red:*.png=32:*.jpg=32:*.mp3=1;33:*.flac=1;33' ; export LS_COLORS
 
 # completion
 autoload -U compinit
@@ -71,7 +77,7 @@ alias sus="sudo systemctl suspend"
 alias w="sudo wifi-menu"
 alias genpass="apg -a 0 -m 14 -x 14 -M SNCL"
 alias gcal="gcalcli calw 1 --color_border 'white' --color_date 'red' --width 12"
-alias n="ncmpcpp -s visualizer -S browser"
+alias n="ncmpcpp -s visualizer -S media_library"
 alias news="newsbeuter"
 alias um="sudo umount /home/qeni/mnt"
 alias pack="tar -zcvf"
@@ -138,6 +144,9 @@ alias hdmi1='xrandr --output HDMI-1 --mode 1360x768 --right-of LVDS-1'
 alias vga1='xrandr --output VGA-1 --mode 1024x768 --right-of LVDS-1'
 alias sam1='xrandr --output VGA-1 --mode 1280x1024 --right-of LVDS-1'
 alias def='xrandr -s 0'
+# network aliases
+alias wifilist="nmcli device wifi list"
+alias connect="nmcli device wifi connect" # connect <name> password <password>
 #other
 # usage: resize 50% input.png output.png
 alias resize='convert -resize'
@@ -197,5 +206,5 @@ bindkey "^D" delete-char-or-list
 bindkey '^R' history-incremental-search-backward
 
 #screenfetch
-#neofetch --speed_type "max" --speed_shorthand "off" --cpu_temp "C" --distro_shorthand "on" --uptime_shorthand "tiny" --gtk2 "off" --gtk3 "off" --ascii_distro "debian" --color_blocks "off"
+neofetch --speed_type "max" --speed_shorthand "off" --cpu_temp "C" --distro_shorthand "on" --uptime_shorthand "tiny" --gtk2 "off" --gtk3 "off" --ascii_distro "debian" --block_range 0 15 --refresh_rate on --colors 31 31 31 31 31 7
 #neofetch --speed_type "max" --speed_shorthand "off" --cpu_temp "C" --distro_shorthand "on" --uptime_shorthand "tiny" --gtk2 "off" --gtk3 "off" --color_blocks "off" --ascii_distro "gentoo"
