@@ -1,15 +1,25 @@
 # ~/.ncmpcpp/config
 
-###########################################################
+# directories
 ncmpcpp_directory = ~/.ncmpcpp
 lyrics_directory = ~/.mpd/lyrics
 mpd_music_dir = ~/music
 
+# server settings
 mpd_host = localhost
 mpd_port = 6608
 mpd_connection_timeout = 5
-mpd_crossfade_time = 5
 
+# visualizer
+visualizer_data_source = "~/.mpd/mpd.fifo"
+visualizer_type = "spectrum"
+visualizer_spectrum_smooth_look = no
+visualizer_spectrum_hz_min = 20
+visualizer_spectrum_hz_max = 20000
+visualizer_in_stereo = "yes"
+visualizer_look = "●●"
+visualizer_output_name = "fifo"
+visualizer_fps = 60
 audio_output {
   type  "fifo"
   name  "Visualizer"
@@ -20,24 +30,10 @@ audio_output {
 
 playlist_disable_highlight_delay = 0
 message_delay_time = 1
-###########################################################
 
-###########################################################
+# blue theme
 colors_enabled = yes
-
-# blue colors
 visualizer_color = 159, 75, 39, 33, 27, 26, 21, 22, 19, 18 
-
-visualizer_data_source = "~/.mpd/mpd.fifo"
-visualizer_in_stereo = "yes"
-visualizer_type = "spectrum"
-visualizer_spectrum_smooth_look = yes
-visualizer_spectrum_hz_min = 20
-visualizer_spectrum_hz_max = 20000
-visualizer_look = "●▮"
-visualizer_output_name = "fifo"
-visualizer_fps = 60
-
 main_window_color = black
 color1 = red
 color2 = blue
@@ -55,10 +51,10 @@ statusbar_color = white
 alternative_ui_separator_color = black
 window_border_color = blue
 active_window_border = blue
-discard_colors_if_item_is_selected = yes
-###########################################################
+current_item_prefix = "$(cyan)$r"
+current_item_suffix = "$/r$(end)"
+current_item_inactive_column_prefix = "$(blue)$r"
 
-###########################################################
 ## %l - length
 ## %f - filename
 ## %D - directory
@@ -92,20 +88,34 @@ song_list_format = {$5%a - }{$1%t}|{$5%f$9}$R{$8(%l)$9}
 song_status_format = {{$5%a{ "%b"{ (%y)}} - }{%t}}|{%f}
 song_library_format = {$5%n - }{%t}|{%f}
 song_columns_list_format = (20)[blue]{a} (6f)[black]{NE} (50)[white]{t|f:Title} (20)[blue]{b} (7f)[black]{l}
+alternative_header_first_line_format = "$5$aqqu$/a {$5%a$9 - }{$7%t$9}|{$7%f$9} $0$atqq$/a$9"
+alternative_header_second_line_format = "{{$8%b$9}{ [$8%y$9]}}|{$4%D$9}"
 
+# interface
+startup_screen = media_library
+user_interface = alternative
+progressbar_look = "▮▮_"
+now_playing_prefix = "> "
+autocenter_mode = "yes"
+ignore_diacritics = "yes"
+clock_display_seconds = yes
+display_volume_level = yes
+display_bitrate = yes
+display_remaining_time = yes
+mouse_support = yes
+tags_separator = " | "
+selected_item_prefix = "* "
+discard_colors_if_item_is_selected = "yes"
 execute_on_song_change = "~/.ncmpcpp/notify_song.sh"
+
+# other settings
 playlist_show_remaining_time = yes
 incremental_seeking = yes
 seek_time = 1
 volume_change_step = 2
-progressbar_look = "▮▮_"
-
-# database/playlist.
+mpd_crossfade_time = 5
+show_hidden_files_in_local_browser = "no"
 default_place_to_search_in = database
-
-# classic/alternative.
-user_interface = alternative
-
 media_library_primary_tag = artist
 header_visibility = yes
 statusbar_visibility = yes
@@ -115,21 +125,8 @@ cyclic_scrolling = no
 lines_scrolled = 2
 follow_now_playing_lyrics = yes
 fetch_lyrics_for_current_song_in_background = yes
-store_lyrics_in_song_dir = yes
-
-## Screens available for use: help, playlist, browser, search_engine,
-## media_library, playlist_editor, tag_editor, outputs, visualizer, clock.
-startup_screen = media_library
-
+store_lyrics_in_song_dir = no
 locked_screen_width_part = 60
 ask_for_locked_screen_width_part = no
-jump_to_now_playing_song_at_start = no
+jump_to_now_playing_song_at_start = yes
 ask_before_clearing_playlists = yes
-clock_display_seconds = yes
-display_volume_level = yes
-display_bitrate = yes
-#
-display_remaining_time = yes
-mouse_support = yes
-tags_separator = " | "
-show_hidden_files_in_local_browser = "no"
