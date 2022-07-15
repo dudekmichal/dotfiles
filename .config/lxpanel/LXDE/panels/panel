@@ -6,18 +6,19 @@ Global {
   allign=left
   margin=0
   widthtype=percent
-  width=100
-  height=26
+  width=53
+  height=34
   transparent=1
   tintcolor=#000000
-  alpha=234
+  alpha=138
   setdocktype=1
   setpartialstrut=1
   usefontcolor=1
   fontcolor=#ffffff
   background=0
   backgroundfile=/usr/share/lxpanel/images/background.png
-  iconsize=22
+  iconsize=25
+  align=center
 }
 Plugin {
   type=space
@@ -54,28 +55,23 @@ Plugin {
       id=pcmanfm.desktop
     }
     Button {
+      id=lxterminal.desktop
+    }
+    Button {
       id=menu://applications/System/debian-xterm.desktop
     }
     Button {
       id=pycharm-community.desktop
     }
     Button {
-      id=lxappearance.desktop
-    }
-    Button {
       id=lxmusic.desktop
     }
     Button {
-      id=vim.desktop
+      id=lxappearance.desktop
     }
     Button {
       id=mousepad.desktop
     }
-  }
-}
-Plugin {
-  type=pager
-  Config {
   }
 }
 Plugin {
@@ -106,15 +102,8 @@ Plugin {
   }
 }
 Plugin {
-  type=thermal
+  type=pager
   Config {
-    NormalColor=#a1a1a1
-    Warning1Color=#fff000
-    Warning2Color=#ff0000
-    AutomaticLevels=1
-    Warning1Temp=117
-    Warning2Temp=122
-    AutomaticSensor=1
   }
 }
 Plugin {
@@ -122,13 +111,15 @@ Plugin {
   Config {
     DisplayCPU=1
     DisplayRAM=1
-    CPUColor=#1793d0
-    RAMColor=#1793d0
+    CPUColor=#00ffff
+    RAMColor=#00ffff
   }
 }
 Plugin {
   type=netstatus
   Config {
+    iface=enp4s0
+    configtool=nm-connection-editor
   }
 }
 Plugin {
@@ -144,22 +135,7 @@ Plugin {
 Plugin {
   type=volume
   Config {
-  }
-}
-Plugin {
-  type=batt
-  Config {
-    BackgroundColor=black
-    ChargingColor1=#5f819d
-    ChargingColor2=#5f819d
-    DischargingColor1=#777777
-    DischargingColor2=#777777
-    HideIfNoBattery=0
-    AlarmCommand=notify-send "Niski poziom baterii" --icon=battery-caution
-    AlarmTime=8
-    BorderWidth=1
-    Size=8
-    ShowExtendedInformation=1
-    BatteryNumber=0
+    CardNumber=1
+    MasterChannel=Front
   }
 }
