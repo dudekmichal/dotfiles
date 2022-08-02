@@ -206,5 +206,5 @@ bindkey "^D" delete-char-or-list
 bindkey '^R' history-incremental-search-backward
 
 #screenfetch
-neofetch --speed_type "max" --speed_shorthand "off" --cpu_temp "C" --distro_shorthand "on" --uptime_shorthand "tiny" --gtk2 "off" --gtk3 "off" --ascii_distro "debian" --block_range 0 15 --refresh_rate on --colors 31 31 31 31 31 7
+# neofetch --speed_type "max" --speed_shorthand "off" --cpu_temp "C" --distro_shorthand "on" --uptime_shorthand "tiny" --gtk2 "off" --gtk3 "off" --ascii_distro "debian" --block_range 0 15 --refresh_rate on --colors 31 31 31 31 31 7
 #neofetch --speed_type "max" --speed_shorthand "off" --cpu_temp "C" --distro_shorthand "on" --uptime_shorthand "tiny" --gtk2 "off" --gtk3 "off" --color_blocks "off" --ascii_distro "gentoo"
