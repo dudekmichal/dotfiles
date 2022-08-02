@@ -367,9 +367,9 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>st</name>
+          <name>st -g=120x40</name>
         </startupnotify>
-        <command>st</command>
+        <command>st -g=120x40</command>
       </action>
     </keybind>
     <keybind key="A-d">
