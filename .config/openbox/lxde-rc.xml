@@ -367,9 +367,9 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>lxterminal</name>
+          <name>st</name>
         </startupnotify>
-        <command>lxterminal</command>
+        <command>st</command>
       </action>
     </keybind>
     <keybind key="A-d">
@@ -396,7 +396,7 @@
           <enabled>true</enabled>
           <name>openbox-restart</name>
         </startupnotify>
-        <command>lxterminal -e openbox --restart</command>
+        <command>st -e openbox --restart</command>
       </action>
     </keybind>
     <keybind key="A-m">
@@ -405,7 +405,7 @@
           <enabled>true</enabled>
           <name>mocp</name>
         </startupnotify>
-        <command>lxterminal -e "ncmpcpp -s visualizer -S browser"</command>
+        <command>st -e "ncmpcpp -s visualizer -S browser"</command>
       </action>
     </keybind>
     <keybind key="A-n">
@@ -566,7 +566,7 @@
     <!-- Launch Task Manager with Ctrl+Alt+Del -->
     <keybind key="A-C-Delete">
       <action name="Execute">
-        <command>lxterminal -e htop</command>
+        <command>st -g=120x40 -e htop</command>
       </action>
     </keybind>
   </keyboard>
