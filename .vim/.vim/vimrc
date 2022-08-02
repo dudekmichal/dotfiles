@@ -1,0 +1,173 @@
+set encoding=utf-8
+set nocompatible
+set updatetime=100
+syntax on
+filetype on
+filetype plugin on
+set autoindent
+filetype indent on
+set showmatch
+set t_Co=256
+set background=dark
+let mapleader=" "
+set showtabline=2
+set backspace=indent,eol,start
+
+" colorscheme 256_noir
+colorscheme cyan
+
+"Highlight searching
+set hlsearch
+
+"Set incremental searching
+set incsearch
+
+" A tab is 2 spaces
+set tabstop=2
+
+" Width of indent with shift
+set shiftwidth=2
+
+" Insert spaces instead of tabs
+set expandtab
+
+" See multiple space characters as tabstops
+set softtabstop=2
+
+" Ignore case when searching
+set ignorecase
+
+" Remember more commands
+set history=1000
+
+" save undo's after file closes
+set undofile
+" where to save undo history
+set undodir=~/.vim/undo
+" how many undos
+set undolevels=1000
+" numbers of lines to save for undo
+set undoreload=10000
+"
+" Don't beep
+set visualbell
+set noerrorbells
+set visualbell t_vb=
+
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+" Highlight current line and column
+" au WinLeave * set nocursorline nocursorcolumn
+" au WinEnter * set cursorline cursorcolumn
+set cursorline " cursorcolumn
+
+" Cursor stays in the middle of the screen
+set scrolloff=50
+
+" show numbers of lines
+set number
+set relativenumber
+
+" Write the old file out when switching between files.
+" set autowrite
+
+" Display current cursor position in lower right corner.
+set ruler
+
+"Better line wrapping
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+
+"Enable/disable code folding
+" set foldenable
+set nofoldenable
+
+" How to fold
+set foldmethod=indent
+
+"Hide mouse when typing
+set mousehide
+
+" More useful command-line completion
+set wildmenu
+
+"Auto-completion menu
+set wildmode=list:longest
+
+" Open splits below and on the right
+set splitbelow
+set splitright
+" indentLine
+let g:indentLine_color_term = 239
+let g:indentLine_char = '|'
+
+" Autostart
+execute pathogen#infect()
+
+" wincmd p puts the cursor in the main window
+autocmd VimEnter * wincmd p
+
+" reload vim config
+map <leader>r :source ~/.vim/vimrc<CR>
+
+" Kill the capslock when leaving insert mode.
+autocmd InsertLeave * set iminsert=0
+
+" Better copy/paste (go to insert, press F2 and paste text)
+set pastetoggle=<F2>
+set clipboard=unnamed
+
+" Compiling directly in vim
+nmap <Leader>9 :make<cr>
+
+" run compiled file
+map <Leader>0 :!./bin<CR>
+
+" jk instead od ESC
+inoremap jk <ESC>
+
+" search with space
+" noremap <space> /
+
+nnoremap Y y$
+
+" Easier split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Faster commands
+noremap ; :
+
+" Move to the first non-blank character of the line
+nnoremap m ^
+
+" Move to the last non-blank character of the line
+nnoremap M $
+
+" Undo/Redo with arrows
+:map <Left> :undo<CR>
+:map <Right> :redo<CR>
+
+" Previous/Next function
+:map <Up> [[
+:map <Down> ]]
+
+" ctrl+n to off backlight during search in text
+noremap <C-n> :nohl<CR>
+vnoremap <C-n> :nohl<CR>
+inoremap <C-n> :nohl<CR>
+
+" jump to the end of pasted text
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
+" No backup and swap files
+set nobackup
+set nowritebackup
+set noswapfile
