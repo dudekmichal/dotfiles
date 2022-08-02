@@ -72,6 +72,12 @@ Plugin {
     Button {
       id=mousepad.desktop
     }
+    Button {
+      id=org.qt-project.qtcreator.desktop
+    }
+    Button {
+      id=polychromatic.desktop
+    }
   }
 }
 Plugin {
@@ -137,5 +143,10 @@ Plugin {
   Config {
     CardNumber=1
     MasterChannel=Front
+  }
+}
+Plugin {
+  type=batt
+  Config {
   }
 }
