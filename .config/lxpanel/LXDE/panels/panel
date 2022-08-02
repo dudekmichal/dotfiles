@@ -148,5 +148,17 @@ Plugin {
 Plugin {
   type=batt
   Config {
+    BackgroundColor=black
+    ChargingColor1=#B5BD68
+    ChargingColor2=#B5BD68
+    DischargingColor1=#F0C674
+    DischargingColor2=#DE935F
+    HideIfNoBattery=0
+    AlarmCommand=notify-send "Niski poziom baterii" --icon=battery-caution
+    AlarmTime=10
+    BorderWidth=1
+    Size=8
+    ShowExtendedInformation=1
+    BatteryNumber=0
   }
 }

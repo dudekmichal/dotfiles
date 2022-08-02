@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export TERM="xterm-256color"
 #export LANG="pl_PL.UTF-8"
 
@@ -15,8 +22,8 @@ autoload -U colors
 colors
 setxkbmap -option ctrl:nocaps
 
-# red=31, green=32, orange=33, blue=34, purple=35
-LS_COLORS=$LS_COLORS:'di=34:ex=32:*.tar=red:*.gz=red:*.png=32:*.jpg=32:*.mp3=1;33:*.flac=1;33' ; export LS_COLORS
+# red=31, green=32, orange=33, blue=34, purple=35, cyan=36, turquoise=96
+LS_COLORS=$LS_COLORS:'di=36:ex=32:*.tar=red:*.gz=red:*.png=32:*.jpg=32:*.mp3=1;33:*.flac=1;33' ; export LS_COLORS
 
 # completion
 autoload -U compinit
@@ -155,6 +162,8 @@ alias eV="vim ~/.vim/vimrc"
 alias e3="vim ~/.i3/config"
 alias qeni="nmcli dev wifi connect 'qeni' password '12345678'"
 
+alias neofetch="neofetch --speed_type 'max' --speed_shorthand 'off' --cpu_temp 'C' --uptime_shorthand 'tiny' --gtk2 'off' --gtk3 'off' --color_blocks 'off' --ascii_distro 'arch_tiny'"
+
 #copy and go to dir
 cpg()
 {
@@ -207,4 +216,9 @@ bindkey '^R' history-incremental-search-backward
 
 #screenfetch
 # neofetch --speed_type "max" --speed_shorthand "off" --cpu_temp "C" --distro_shorthand "on" --uptime_shorthand "tiny" --gtk2 "off" --gtk3 "off" --ascii_distro "debian" --block_range 0 15 --refresh_rate on --colors 31 31 31 31 31 7
-#neofetch --speed_type "max" --speed_shorthand "off" --cpu_temp "C" --distro_shorthand "on" --uptime_shorthand "tiny" --gtk2 "off" --gtk3 "off" --color_blocks "off" --ascii_distro "gentoo"
+# neofetch --speed_type "max" --speed_shorthand "off" --cpu_temp "C" --distro_shorthand "on" --uptime_shorthand "tiny" --gtk2 "off" --gtk3 "off" --color_blocks "off" --ascii_distro "arch_tiny"
+
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
