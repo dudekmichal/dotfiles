@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippets>
+    <snippet group="C++" trigger="bits" id="" complement="" removed="false" modified="false">#include &lt;bits/stdc++.h&gt;</snippet>
+    <snippet group="C++" trigger="class" id="cpp_genericclass" complement="" removed="false" modified="true">class $name$
+{
+public:
+  $name$();
+  ~$name$();
+
+private:
+  $private$
+};</snippet>
+    <snippet group="C++" trigger="do" id="cpp_do" complement="" removed="false" modified="true">do
+{
+  $$
+} while ($condition$);</snippet>
+    <snippet group="C++" trigger="else" id="cpp_else" complement="" removed="false" modified="true">else
+{
+  $$
+}</snippet>
+    <snippet group="C++" trigger="else" id="cpp_elsewithif" complement="with if" removed="false" modified="true">else if ($condition$)
+{
+  $$
+}</snippet>
+    <snippet group="C++" trigger="for" id="cpp_for" complement="" removed="false" modified="true">for (int $var$=0; $var$&lt;$total$; ++$var$)
+{
+    $$
+}</snippet>
+    <snippet group="C++" trigger="for" id="cpp_for_rangebased" complement="range-based" removed="false" modified="true">for ($var$ : $container$)
+{
+    $$
+}</snippet>
+    <snippet group="C++" trigger="foreach" id="cpp_foreach" complement="" removed="false" modified="true">foreach ($var$, $container$)
+{
+    $$
+}</snippet>
+    <snippet group="C++" trigger="if" id="cpp_if" complement="" removed="false" modified="true">if ($condition$)
+{
+    $$
+}</snippet>
+    <snippet group="C++" trigger="if" id="cpp_ifandelse" complement="and else" removed="false" modified="true">if ($condition$)
+{
+  $$
+}
+else
+{
+  $$
+}</snippet>
+    <snippet group="C++" trigger="main" id="cpp_main" complement="" removed="false" modified="true">int main(int argc, char *argv[])
+{
+  $$
+      
+  return 0;
+}
+</snippet>
+    <snippet group="C++" trigger="namespace" id="cpp_namespace_with_comment" complement="with closing brace comment" removed="false" modified="true">namespace $name$
+{
+  $$
+} // namespace $name$</snippet>
+    <snippet group="C++" trigger="new" id="" complement="" removed="false" modified="false">#include &lt;iostream&gt;
+
+using std::cout;
+using std::cin;
+using std::endl;
+
+int main(int argc, char *argv[])
+{
+  $$
+  
+  return 0;
+}</snippet>
+    <snippet group="C++" trigger="struct" id="cpp_structtemplate" complement="template" removed="false" modified="true">template &lt;typename $T$&gt;
+struct $name$
+{
+  $name$() {}
+};</snippet>
+    <snippet group="C++" trigger="swap_variables" id="" complement="" removed="false" modified="false">template&lt;typename T&gt;
+void swap_variables(T &amp;a, T &amp;b)
+{
+  a ^= b ^= a ^= b;
+}</snippet>
+    <snippet group="C++" trigger="switch" id="cpp_switch" complement="" removed="false" modified="true">switch ($control$)
+{
+case $value$:
+  $$
+  break;
+default:
+  break;
+}</snippet>
+    <snippet group="C++" trigger="try" id="cpp_trycatch" complement="and catch" removed="false" modified="true">try
+{
+  $$
+}
+  catch (...)
+{
+
+}</snippet>
+    <snippet group="C++" trigger="while" id="cpp_while" complement="" removed="false" modified="true">while ($condition$)
+{
+  $$
+}</snippet>
+    <snippet group="C++" trigger="namespace" id="cpp_namespace" complement="" removed="true" modified="true">namespace $name$
+{
+  $$
+}</snippet>
+    <snippet group="Text" trigger="class" id="" complement="" removed="false" modified="false">class $name
+{
+public:
+  $name();
+
+private:
+
+};</snippet>
+</snippets>
