@@ -13,7 +13,8 @@ let mapleader=" "
 set showtabline=2
 set backspace=indent,eol,start
 
-colorscheme 256_noir
+" colorscheme 256_noir
+colorscheme cyan
 
 "Highlight searching
 set hlsearch
@@ -114,7 +115,7 @@ let g:indentLine_char = '|'
 execute pathogen#infect()
 
 " wincmd p puts the cursor in the main window
-autocmd VimEnter * wincmd p
+" autocmd VimEnter * wincmd p
 
 " reload vim config
 map <leader>r :source ~/.vim/vimrc<CR>
@@ -154,21 +155,21 @@ highlight TagbarVisibilityPrivate ctermfg=96
 
 " NERDTree
 " autocmd FileType c,h,cpp,java,sh,py nested :NERDTree
-autocmd VimEnter * NERDTree | wincmd p
-autocmd BufEnter * lcd %:p:h
-let g:NERDTreeWinSize = 30
-map <Leader>1 :NERDTreeToggle<CR>
-let NERDTreeShowHidden=0
-let g:NERDTreeDirArrows=0
-let NERDTreeAutoDeleteBuffer=1
-let NERDTreeCascadeOpenSingleChildDir=1
-let NERDTreeMinimalUI=0
-let NERDTreeShowLineNumbers=0
-let NERDTreeShowBookmarks=1
-let NERDTreeBookmarksFile="/home/qeni/.NERDTreeBookmarks"
-let NERDTreeIgnore=['\.vim$', '\.o$', '\.pdf$', '\.png$', '\.jpg$', '\.doc$', '\.mp4$', '\.mp3$', '\.rar$', '\.zip$', '\~$']
-let NERDTreeHijackNetrw=0
-highlight NERDTreeDir guifg=#FF0000 ctermfg=red
+" autocmd VimEnter * NERDTree | wincmd p
+" autocmd BufEnter * lcd %:p:h
+" let g:NERDTreeWinSize = 30
+" map <Leader>1 :NERDTreeToggle<CR>
+" let NERDTreeShowHidden=0
+" let g:NERDTreeDirArrows=0
+" let NERDTreeAutoDeleteBuffer=1
+" let NERDTreeCascadeOpenSingleChildDir=1
+" let NERDTreeMinimalUI=0
+" let NERDTreeShowLineNumbers=0
+" let NERDTreeShowBookmarks=1
+" let NERDTreeBookmarksFile="/home/qeni/.NERDTreeBookmarks"
+" let NERDTreeIgnore=['\.vim$', '\.o$', '\.pdf$', '\.png$', '\.jpg$', '\.doc$', '\.mp4$', '\.mp3$', '\.rar$', '\.zip$', '\~$']
+" let NERDTreeHijackNetrw=0
+" highlight NERDTreeDir guifg=#FF0000 ctermfg=red
 
 " neocomplete
 let g:neocomplete#enable_at_startup = 1
