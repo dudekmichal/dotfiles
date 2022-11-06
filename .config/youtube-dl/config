@@ -1,0 +1,6 @@
+-f best
+-o ~/download/%(title)s.%(ext)s
+
+--restrict-filenames
+--no-overwrites
+--continue
