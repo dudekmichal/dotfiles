@@ -1,0 +1,28 @@
+[$Version]
+update_info=kwin.upd:replace-scalein-with-scale,kwin.upd:port-minimizeanimation-effect-to-js,kwin.upd:port-scale-effect-to-js,kwin.upd:port-dimscreen-effect-to-js,kwin.upd:auto-bordersize,kwin.upd:animation-speed,kwin.upd:desktop-grid-click-behavior,kwin.upd:no-swap-encourage,kwin.upd:make-translucency-effect-disabled-by-default,kwin.upd:remove-flip-switch-effect,kwin.upd:remove-cover-switch-effect,kwin.upd:remove-cubeslide-effect,kwin.upd:remove-xrender-backend,kwin.upd:enable-scale-effect-by-default,kwin.upd:overview-group-plugin-id,kwin.upd:animation-speed-cleanup
+
+[Compositing]
+OpenGLIsUnsafe=false
+
+[Desktops]
+Id_1=202268f8-cce1-42d9-b9f9-e27b79cb4231
+Id_2=ae387050-34c4-47f7-8a8e-7c9b408acecd
+Id_3=3e56dfb1-2c9d-44a4-bf25-e6fb50a5610f
+Id_4=e03bdb4a-ba12-45a4-9fce-bd14c3c17a4a
+Name_2=Nowy pulpit
+Name_3=Nowy pulpit
+Name_4=Nowy pulpit
+Number=4
+Rows=1
+
+[TabBox]
+DesktopLayout=org.kde.breeze.desktop
+DesktopListLayout=org.kde.breeze.desktop
+LayoutName=org.kde.breeze.desktop
+
+[Windows]
+RollOverDesktops=false
+
+[org.kde.kdecoration2]
+library=org.kde.breeze
+theme=Breeze
