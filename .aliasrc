@@ -1,0 +1,37 @@
+# basic aliases
+alias l="clear;ls -lFG --color"
+alias ll="clear;ls --color -lahFG"
+alias ..="cd ..;clear;ls --color -lFG;pwd"
+alias off="sudo systemctl poweroff"
+alias reb="sudo systemctl reboot"
+
+# apt aliases
+alias ai="sudo apt install"
+alias as="apt search"
+alias ash="apt show"
+alias au="sudo apt update"
+alias aug="sudo apt upgrade"
+alias ap="sudo apt purge"
+alias ar="sudo apt remove"
+
+# git aliases
+alias gs="git status -sb"
+alias gd="git diff --word-diff --color"
+alias ga="git add"
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gp="git push"
+alias gpl="git pull"
+alias gcl="git clone"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gch="git checkout"
+alias gb="git branch"
+alias gr="git reset" # e.g. git reset abc.txt
+alias grc="git reset --hard HEAD~1" # git reset commit
+
+# other
+alias yt="youtube-dl -c -f best"
+
+# edit dotfiles aliases
+alias eZ="vim ~/.zshrc"
+alias eV="vim ~/.vim/vimrc"
