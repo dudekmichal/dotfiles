@@ -13,6 +13,7 @@ alias au="sudo apt update"
 alias aug="sudo apt upgrade"
 alias ap="sudo apt purge"
 alias ar="sudo apt remove"
+alias asrc="apt source"
 
 # git aliases
 alias gs="git status -sb"
