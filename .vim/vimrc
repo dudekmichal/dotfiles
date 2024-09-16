@@ -85,6 +85,12 @@ set nofoldenable
 "Hide mouse when typing
 set mousehide
 
+" Disable mouse
+set mouse=
+set ttymouse=
+map <ScrollWheelUp> <nop>
+map <ScrollWheelDown> <nop>
+
 " More useful command-line completion
 set wildmenu
 
