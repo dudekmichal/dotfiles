@@ -38,3 +38,5 @@ todo.txt
 .fehbg
 .lesshst
 .vim/.netrwhist
+*.swp
+*.swap
