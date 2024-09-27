@@ -8,7 +8,8 @@ set cursorline
 filetype plugin on
 
 " colorscheme
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme nord
 set background=dark
 
 " encoding
@@ -244,7 +245,7 @@ nnoremap <Leader>j :resize -5<CR>
 " set nowritebackup
 
 " highlight colors
-autocmd VimEnter * ColorHighlight
+" autocmd VimEnter * ColorHighlight
 
 " vim-airline
 let g:airline_theme='powerlineish'
